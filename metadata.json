@@ -1,0 +1,7 @@
+{
+  "name": "HealthBuddy AI",
+  "description": "A multilingual AI-driven public health assistant for rural and semi-urban communities, providing symptom guidance, vaccination schedules, and real-time outbreak alerts.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
