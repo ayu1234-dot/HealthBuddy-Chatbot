@@ -36,15 +36,27 @@ const Header: React.FC<HeaderProps> = ({ currentView, setView, selectedLanguage,
           </button>
         </nav>
 
-        <select 
-          value={selectedLanguage}
-          onChange={(e) => onLanguageChange(e.target.value)}
-          className="bg-slate-50 border border-slate-200 rounded-md px-2 py-1.5 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-emerald-500"
-        >
-          {SUPPORTED_LANGUAGES.map(lang => (
-            <option key={lang.code} value={lang.code}>{lang.nativeName}</option>
-          ))}
-        </select>
+        <div className="flex items-center gap-3">
+          <select 
+            value={selectedLanguage}
+            onChange={(e) => onLanguageChange(e.target.value)}
+            className="bg-slate-50 border border-slate-200 rounded-md px-2 py-1.5 text-xs sm:text-sm outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            {SUPPORTED_LANGUAGES.map(lang => (
+              <option key={lang.code} value={lang.code}>{lang.nativeName}</option>
+            ))}
+          </select>
+          
+          <a 
+            href="https://github.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 transition-all"
+            title="View on GitHub"
+          >
+            <i className="fab fa-github text-lg"></i>
+          </a>
+        </div>
       </div>
     </header>
   );
